@@ -1,0 +1,16 @@
+.title-campaign {
+  font-weight: bold;
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #40a9ff;
+}
+
+.btn-campaign {
+  margin-right: 8px;
+  width: 120px;
+}
+
+.ant-row.ant-form-item {
+  margin-bottom: 10px;
+}

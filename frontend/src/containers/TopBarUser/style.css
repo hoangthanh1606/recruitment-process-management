@@ -1,0 +1,11 @@
+.topbar-user{
+    display: flex;
+    justify-content: space-between;
+}
+.topbar-user h1{
+    color: white;
+    font-weight: 600;
+}
+.topbar-user span{
+    color: beige;
+}

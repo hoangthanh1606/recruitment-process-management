@@ -1,0 +1,6 @@
+module.exports.authController = require('./auth.controller')
+module.exports.taskController = require('./task.controller')
+module.exports.campaignController = require('./campaign.controller')
+module.exports.profileController = require('./profile.controller')
+module.exports.uploadController = require('./upload.controller')
+module.exports.mailController = require('./mail.controller')

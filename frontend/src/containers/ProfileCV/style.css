@@ -1,0 +1,60 @@
+.profile-campaign{
+    text-align: left;
+    margin-top: 30px;
+    flex: 1;
+}
+.ant-form-item-label{
+    text-align: left;
+    width: 500px;
+    font-weight: 600;
+}
+.ant-row-center {
+    justify-content: flex-start;
+}
+.title-profile{
+    font-size: 30px;
+    text-transform: uppercase;
+}
+.select-status{
+    width: 220px !important;
+}
+.ant-select-selector{
+    width: 226px !important;
+}
+.iframe-cv{
+    height: 65vh;
+    width: 75vh;
+    padding: 10px
+}
+.iframe-cv iframe{
+    width: 100%;
+    height: 100%;
+}
+.cv-campaign{
+    flex: 1;
+}
+.btn-reject{
+    background: red;
+    color: white;
+    padding: 5px 20px;
+    margin-top: 30px;
+    border: none;
+}
+.btn-reject:hover, .btn-reject:focus{
+    background: rgb(211, 13, 13);
+    color: white;
+    border: none;
+}
+.btn-submit{
+    background: blue;
+    color: white;
+    padding: 5px 20px;
+    margin-top: 30px;
+    border: none;
+    margin-right: 10px;
+}
+.btn-submit:hover, .btn-submit:focus{
+    background: rgb(23, 23, 199);
+    color: white;
+    border: none;
+}

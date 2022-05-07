@@ -1,0 +1,52 @@
+version: "3.8"
+services:
+  # PHP Service
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: php_rpm_back_end
+    restart: unless-stopped
+    tty: true
+    working_dir: /var/www/html
+    volumes:
+      - ./:/var/www/html
+      - ./docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
+    networks:
+      - php-rpm-backend
+  nginx:
+    build:
+      context: ./docker/nginx
+      dockerfile: Dockerfile
+    container_name: php_rpm_nginx
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "8900:443"
+    volumes:
+      - ./:/var/www/html
+    networks:
+      - php-rpm-backend
+  #MySQL Service
+  db:
+    image: 'mysql:8.0'
+    container_name: php_rpm_mysql
+    command: ['--default-authentication-plugin=mysql_native_password', '--lower_case_table_names=2']
+    restart: always
+    ports:
+      - '44333:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: '123123'
+      MYSQL_DATABASE: 'php_rpm_db'
+      MYSQL_USER: 'admin'
+      MYSQL_PASSWORD: '123123'
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    volumes:
+      - ./db:/var/lib/mysql
+      - ./docker/mysql/mysql.cnf:/etc/mysql/mysql.cnf
+    networks:
+      - php-rpm-backend
+#Docker Networks
+networks:
+  php-rpm-backend:
+    driver: bridge
